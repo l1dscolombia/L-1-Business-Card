@@ -1,0 +1,318 @@
+/*-----------------------------------------------------------------------
+              _
+             /_\
+             )_(
+             |=|
+             |=|
+       ______|=|___________
+      |  ____|=|_____     /
+      | /    |=|    /    /       THE LEGEND OF
+      |/ ____|_|__ / /  / _________ ______     _________       _____   TM
+         \_______ / // / \    ___  |\    /     \    __  \      \    \
+            | = |/ // /   |  |   \ | |  |       |  |  \  \     /  _  \
+            |/V\/ // /    |  |    \| |  |       |  |   \  \   /  / \  \
+            | |/  / /     |  |       |  |       |  |    \  | /  /   \  \
+           /| / /| /      |  |___/|  |  |       |  |     | | |  |   |  |
+          /_|/ // /       |   ___ |  |  |       |  |     | | |  |___|  |
+         /\ / |/ //\      |  |   \|  |  |       |  |     | | |   ___   |
+        /  / /  //  \     |  |       |  |       |  |    /  | |  |   |  |
+       /  / // /|    \    |  |    /| |  |    /| |  |   /  /  |  |   |  |
+      /__/ // / |_____\   |  |___/ | |  |___/ | |  |__/  /   |  |   |  |
+        / // /| |        /_________|/_________|/________/   /____\ /____\
+       /  / / | |       /|
+      /    /| | |______/ |
+     /______| | |________|
+            | | |
+            | | |
+            | | |
+            | | |
+            | | |
+             \|/
+              V
+*
+* Template name : L-1 DIGITAL STUDIO Bussiness Card
+* Version       : 1.1
+* Author        : L-1 DIGITAL STUDIO
+* Author URL    : https://l1ds.co/
+*
+-----------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.businessCard {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.businessCard:hover {
+    width: 600px;
+    transition-delay: 0s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.businessCard .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.businessCard .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.4s;
+}
+
+.businessCard:hover .circle::before {
+    clip-path: circle(400px at center);
+}
+
+.businessCard .circle .logo {
+    position: relative;
+    width: 230px;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.businessCard:hover .circle .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.content {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.4s;
+    visibility: hidden;
+}
+
+.businessCard:hover .content {
+    left: 0%;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.4s;
+}
+
+.content h1 {
+    font-family: 'Kaushan Script', cursive;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.content h2 {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 0.78em;
+}
+
+.content p {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+a.address,
+a.tel,
+a.email {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+a.address:hover,
+a.tel:hover,
+a.email:hover {
+    transform: translateX(10%);
+    transition: 0.25s;
+    transition-delay: 0s;
+}
+
+ul {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    gap: 25px;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    width: 150px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: linear-gradient(120deg, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.4s;
+}
+
+ul li:hover::before {
+    opacity: 1;
+}
+
+ul li::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(120deg, var(--i), var(--j));
+    transition: 0.4s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+
+ul li:hover::after {
+    opacity: 0.5;
+}
+
+ul li ion-icon {
+    color: #ffffff;
+    font-size: 1.75em;
+    transition: 0.4s;
+    transition-delay: 0s;
+}
+
+ul li:hover ion-icon {
+    transform: scale(0);
+    color: rgba(0, 0, 0, 0);
+    transition-delay: 0s;
+}
+
+ul li span {
+    position: absolute;
+}
+
+ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul li .tittle {
+    color: #ffffff;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transform: scale(0);
+    transition: 0.1s;
+    transition-delay: 0s;
+}
+
+ul li:hover .tittle {
+    transform: scale(1);
+    transition-delay: 0.25s;
+} 
+
+.businessCard .img {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 500px;
+    transition: 0.4s;
+    transition-delay: 0s;
+}
+
+.businessCard:hover .img {
+    left: 72%;
+    transform: translate(-50%, -59.5%) scale(1);
+    transition-delay: 0.4s;
+}
+
+@media (max-width: 991px) {
+
+    .businessCard {
+        max-width: 350px;
+        align-items: flex-start;
+    }
+
+    .businessCard:hover {
+        height: 600px;
+    }
+
+    .businessCard:hover .img {
+        top: initial;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, 9.5%) scale(1);
+        height: 310px;
+    }
+
+    .businessCard .content {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .content h1,
+    .content h2,
+    .content p {
+        text-align: center;
+    }
+
+    .content a:hover {
+        transform: translateX(0%);
+    }
+
+    ul {
+        justify-content: center;
+    }
+
+}
